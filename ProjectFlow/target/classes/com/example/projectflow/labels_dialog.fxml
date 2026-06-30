@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane prefHeight="500" prefWidth="600"
+            style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1;"
+            xmlns="http://javafx.com/javafx/17.0.2"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.LabelsController">
+    <top>
+        <VBox style="-fx-background-color: #1565c0; -fx-padding: 20;">
+            <Label text="МЕТКИ"
+                   style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Label text="Управление метками задач"
+                   style="-fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 12;"/>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20;">
+            <VBox spacing="15" style="-fx-background-color: #f5f5f5; -fx-padding: 15; -fx-border-color: #999; -fx-border-width: 1;">
+                <Label text="НОВАЯ МЕТКА"
+                       style="-fx-font-weight: bold; -fx-text-fill: black; -fx-font-size: 14;"/>
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <VBox spacing="5">
+                        <Label text="Название:" style="-fx-font-weight: bold;"/>
+                        <TextField fx:id="newLabelName"
+                                   promptText="Введите название..."
+                                   style="-fx-pref-width: 200; -fx-border-color: #999; -fx-border-width: 1;"/>
+                    </VBox>
+                    <VBox spacing="5">
+                        <Label text="Цвет:" style="-fx-font-weight: bold;"/>
+                        <ColorPicker fx:id="newLabelColor"/>
+                    </VBox>
+                    <Button fx:id="createLabelButton" onAction="#createLabel"
+                            style="-fx-background-color: #1565c0; -fx-text-fill: white; -fx-font-weight: bold; -fx-pref-width: 100; -fx-pref-height: 32; -fx-background-radius: 0;"
+                            text="СОЗДАТЬ"/>
+                </HBox>
+            </VBox>
+            <VBox spacing="10">
+                <Label text="СПИСОК"
+                       style="-fx-font-weight: bold; -fx-text-fill: black; -fx-font-size: 14;"/>
+                <ListView fx:id="labelsListView" prefHeight="300"
+                          style="-fx-border-color: #999; -fx-border-width: 1;"/>
+            </VBox>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="10"
+              style="-fx-padding: 15; -fx-border-color: black; -fx-border-width: 1 0 0 0;">
+            <Label fx:id="statsLabel" style="-fx-text-fill: #333;"/>
+            <Button onAction="#handleClose"
+                    style="-fx-background-color: #333; -fx-text-fill: white; -fx-background-radius: 0;"
+                    text="ЗАКРЫТЬ"/>
+        </HBox>
+    </bottom>
+</BorderPane>

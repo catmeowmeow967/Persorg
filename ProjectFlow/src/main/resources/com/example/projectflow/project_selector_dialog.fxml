@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane prefWidth="500" prefHeight="600"
+            style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1;"
+            xmlns="http://javafx.com/javafx/17.0.2"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.ProjectSelectorController">
+    <top>
+        <VBox style="-fx-background-color: #1565c0; -fx-padding: 20;">
+            <Label text="ДОСКИ"
+                   style="-fx-font-size: 20; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Label text="Выберите или создайте доску"
+                   style="-fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 12;"/>
+        </VBox>
+    </top>
+    <center>
+        <ScrollPane fitToWidth="true" style="-fx-background-color: white;">
+            <VBox spacing="10" fx:id="projectsContainer" style="-fx-padding: 20;"/>
+        </ScrollPane>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="10"
+              style="-fx-padding: 15; -fx-border-color: black; -fx-border-width: 1 0 0 0;">
+            <Button text="+ НОВАЯ ДОСКА" onAction="#handleCreateNewProject"
+                    style="-fx-background-color: #1565c0; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 0;"/>
+            <Button text="ОТМЕНА" onAction="#handleClose"
+                    style="-fx-background-color: #333; -fx-text-fill: white; -fx-background-radius: 0;"/>
+        </HBox>
+    </bottom>
+</BorderPane>

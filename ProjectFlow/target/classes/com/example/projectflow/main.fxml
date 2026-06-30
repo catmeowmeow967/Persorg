@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane prefHeight="800.0" prefWidth="1200.0"
+            style="-fx-background-color: #2e7d32;"
+            xmlns="http://javafx.com/javafx/17.0.2"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.MainController">
+    <left>
+        <VBox spacing="6" minWidth="148" maxWidth="148"
+              style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 0 1 0 0; -fx-padding: 12 10 12 10;">
+            <Label text="УПРАВЛЕНИЕ" style="-fx-font-size: 10; -fx-text-fill: #666; -fx-font-weight: bold;"/>
+            <Button fx:id="boardsBtn" onMouseEntered="#handleButtonHover" onMouseExited="#handleButtonExit"
+                    text="Доски" prefWidth="128" prefHeight="30"
+                    style="-fx-background-color: #1565c0; -fx-text-fill: white; -fx-font-size: 12; -fx-background-radius: 0;"/>
+            <Button fx:id="filtersBtn" onMouseEntered="#handleButtonHover" onMouseExited="#handleButtonExit"
+                    text="Фильтры" prefWidth="128" prefHeight="30"
+                    style="-fx-background-color: #1565c0; -fx-text-fill: white; -fx-font-size: 12; -fx-background-radius: 0;"/>
+            <Button fx:id="labelsBtn" onMouseEntered="#handleButtonHover" onMouseExited="#handleButtonExit"
+                    text="Метки" prefWidth="128" prefHeight="30"
+                    style="-fx-background-color: #1565c0; -fx-text-fill: white; -fx-font-size: 12; -fx-background-radius: 0;"/>
+            <Button fx:id="membersBtn" onMouseEntered="#handleButtonHover" onMouseExited="#handleButtonExit"
+                    text="Участники" prefWidth="128" prefHeight="30"
+                    style="-fx-background-color: #1565c0; -fx-text-fill: white; -fx-font-size: 12; -fx-background-radius: 0;"/>
+            <Button fx:id="automationBtn" onMouseEntered="#handleButtonHover" onMouseExited="#handleButtonExit"
+                    text="Автоматизация" prefWidth="128" prefHeight="30"
+                    style="-fx-background-color: #1565c0; -fx-text-fill: white; -fx-font-size: 12; -fx-background-radius: 0;"/>
+            <Region VBox.vgrow="ALWAYS"/>
+            <Label text="СИСТЕМА" style="-fx-font-size: 10; -fx-text-fill: #666; -fx-font-weight: bold;"/>
+            <Button fx:id="archiveTabButton" onMouseEntered="#handleButtonHover" onMouseExited="#handleButtonExit"
+                    text="Архив" prefWidth="128" prefHeight="30"
+                    style="-fx-background-color: #0d47a1; -fx-text-fill: white; -fx-font-size: 12; -fx-background-radius: 0;"/>
+            <Button fx:id="notificationsBtn" onAction="#handleNotifications" onMouseEntered="#handleButtonHover" onMouseExited="#handleButtonExit"
+                    text="Сегодня" prefWidth="128" prefHeight="30"
+                    style="-fx-background-color: #e0e0e0; -fx-text-fill: black; -fx-font-size: 12; -fx-background-radius: 0;"/>
+            <Button fx:id="helpButton" onAction="#showHelpDialog" onMouseEntered="#handleButtonHover" onMouseExited="#handleButtonExit"
+                    text="Справка" prefWidth="128" prefHeight="30"
+                    style="-fx-background-color: #e0e0e0; -fx-text-fill: black; -fx-font-size: 12; -fx-background-radius: 0;"/>
+            <Button fx:id="menuBtn" onAction="#showHelpMenu"
+                    text="Меню" prefWidth="128" prefHeight="30"
+                    style="-fx-background-color: #e0e0e0; -fx-text-fill: black; -fx-font-size: 12; -fx-background-radius: 0;"/>
+            <Button fx:id="userMenuBtn" onAction="#handleUserMenu"
+                    text="ВЫЙТИ" prefWidth="128" prefHeight="32"
+                    style="-fx-background-color: #c62828; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12; -fx-background-radius: 0;"/>
+        </VBox>
+    </left>
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12"
+              style="-fx-background-color: #2e7d32; -fx-padding: 10 16;">
+            <Label fx:id="projectTitleLabel"
+                   style="-fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 16;"
+                   text="Проект"/>
+            <Region HBox.hgrow="ALWAYS"/>
+        </HBox>
+    </top>
+    <center>
+        <ScrollPane hbarPolicy="AS_NEEDED" vbarPolicy="NEVER"
+                    style="-fx-background-color: transparent; -fx-background: transparent; -fx-padding: 12; -fx-border-color: transparent;">
+            <HBox fx:id="kanbanBoard" spacing="12" style="-fx-padding: 0 0 20 0;"/>
+        </ScrollPane>
+    </center>
+</BorderPane>

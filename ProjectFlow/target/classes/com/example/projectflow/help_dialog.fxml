@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<ScrollPane xmlns="http://javafx.com/javafx/17.0.2"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fitToWidth="true"
+            hbarPolicy="NEVER"
+            vbarPolicy="AS_NEEDED"
+            prefWidth="580" prefHeight="420"
+            style="-fx-background-color: white;"
+            fx:controller="controllers.HelpController">
+    <VBox spacing="12" style="-fx-padding: 20; -fx-background-color: white;">
+        <Label text="СПРАВКА"
+               style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: black;"/>
+        <Separator style="-fx-background-color: black;"/>
+        <VBox spacing="6">
+            <Label text="БЫСТРЫЙ СТАРТ"
+                   style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: black;"/>
+            <Label text="1. Создайте доску&#10;2. Добавьте колонки&#10;3. Создавайте задачи&#10;4. Управляйте метками и фильтрами"
+                   style="-fx-text-fill: #333; -fx-font-size: 12;"/>
+        </VBox>
+        <Separator style="-fx-background-color: black;"/>
+        <VBox spacing="8">
+            <Label text="ВОПРОСЫ"
+                   style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: black;"/>
+            <VBox spacing="3">
+                <Label text="Как создать колонку?" style="-fx-font-weight: bold;"/>
+                <Label text="Нажмите '+ Добавить колонку'" style="-fx-text-fill: #333; -fx-font-size: 12;"/>
+            </VBox>
+            <VBox spacing="3">
+                <Label text="Как добавить задачу?" style="-fx-font-weight: bold;"/>
+                <Label text="Кликните '+ Задача' в колонке" style="-fx-text-fill: #333; -fx-font-size: 12;"/>
+            </VBox>
+            <VBox spacing="3">
+                <Label text="Как установить срок?" style="-fx-font-weight: bold;"/>
+                <Label text="Откройте задачу, кнопка 'СРОК'" style="-fx-text-fill: #333; -fx-font-size: 12;"/>
+            </VBox>
+            <VBox spacing="3">
+                <Label text="Как архивировать?" style="-fx-font-weight: bold;"/>
+                <Label text="Меню задачи, кнопка 'АРХИВ'" style="-fx-text-fill: #333; -fx-font-size: 12;"/>
+            </VBox>
+            <VBox spacing="3">
+                <Label text="Где архив?" style="-fx-font-weight: bold;"/>
+                <Label text="Кнопка 'Архив' в левом меню" style="-fx-text-fill: #333; -fx-font-size: 12;"/>
+            </VBox>
+        </VBox>
+        <Separator style="-fx-background-color: black;"/>
+        <VBox spacing="6">
+            <Label text="СОВЕТЫ" style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: black;"/>
+            <Label text="Все изменения сохраняются автоматически&#10;Двойной клик открывает детали&#10;Можно назначать несколько меток"
+                   style="-fx-text-fill: #333; -fx-font-size: 12;"/>
+        </VBox>
+    </VBox>
+</ScrollPane>

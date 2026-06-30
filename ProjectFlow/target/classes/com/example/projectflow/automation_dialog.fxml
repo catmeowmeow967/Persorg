@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane prefHeight="650" prefWidth="750"
+            style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1;"
+            xmlns="http://javafx.com/javafx/17.0.2"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.AutomationController">
+    <top>
+        <VBox spacing="5" style="-fx-padding: 20; -fx-background-color: #1565c0;">
+            <Label text="АВТОМАТИЗАЦИЯ"
+                   style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: white;"/>
+            <Label text="Настройка правил"
+                   style="-fx-text-fill: rgba(255,255,255,0.8); -fx-font-size: 12;"/>
+        </VBox>
+    </top>
+    <center>
+        <VBox spacing="20" style="-fx-padding: 20;">
+            <VBox spacing="15" style="-fx-background-color: #f5f5f5; -fx-padding: 15; -fx-border-color: #999; -fx-border-width: 1;">
+                <Label text="НОВОЕ ПРАВИЛО"
+                       style="-fx-font-weight: bold; -fx-text-fill: black; -fx-font-size: 14;"/>
+                <VBox spacing="8">
+                    <Label text="Когда:" style="-fx-font-weight: bold;"/>
+                    <ComboBox fx:id="triggerCombo" style="-fx-pref-height: 32;"/>
+                </VBox>
+                <VBox spacing="8">
+                    <Label text="Тогда:" style="-fx-font-weight: bold;"/>
+                    <ComboBox fx:id="actionCombo" style="-fx-pref-height: 32;"/>
+                </VBox>
+                <VBox spacing="8">
+                    <Label text="Параметры:" style="-fx-font-weight: bold;"/>
+                    <TextField fx:id="parametersField" promptText="Параметры..."
+                               style="-fx-pref-height: 32; -fx-border-color: #999; -fx-border-width: 1;"/>
+                </VBox>
+                <VBox spacing="8">
+                    <Label text="Описание:" style="-fx-font-weight: bold;"/>
+                    <TextArea fx:id="ruleDescriptionArea" editable="false" prefHeight="60"
+                              style="-fx-font-size: 12; -fx-text-fill: #333; -fx-border-color: #999; -fx-border-width: 1;"/>
+                </VBox>
+                <Button fx:id="createRuleButton" onAction="#createRule"
+                        style="-fx-background-color: #1565c0; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 0;"
+                        text="СОЗДАТЬ"/>
+            </VBox>
+            <VBox spacing="10">
+                <Label text="ПРАВИЛА"
+                       style="-fx-font-weight: bold; -fx-text-fill: black; -fx-font-size: 14;"/>
+                <TableView fx:id="rulesTable" prefHeight="250"
+                           style="-fx-border-color: #999; -fx-border-width: 1;">
+                    <columns>
+                        <TableColumn fx:id="ruleColumn" prefWidth="300" text="Правило"/>
+                        <TableColumn fx:id="statusColumn" prefWidth="100" text="Статус"/>
+                        <TableColumn fx:id="actionsColumn" prefWidth="150" text="Действия"/>
+                    </columns>
+                </TableView>
+                <Label fx:id="statsLabel" style="-fx-text-fill: #333; -fx-font-size: 12;"/>
+            </VBox>
+        </VBox>
+    </center>
+    <bottom>
+        <HBox alignment="CENTER_RIGHT" spacing="10" style="-fx-padding: 15; -fx-border-color: black; -fx-border-width: 1 0 0 0;"/>
+    </bottom>
+</BorderPane>

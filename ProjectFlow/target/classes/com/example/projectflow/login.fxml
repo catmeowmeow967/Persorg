@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<BorderPane xmlns="http://javafx.com/javafx/17.0.2"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.LoginController"
+            style="-fx-background-color: #2e7d32;">
+    <center>
+        <VBox alignment="CENTER">
+            <VBox alignment="CENTER" spacing="16" maxWidth="340"
+                  style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1;">
+                <padding>
+                    <Insets top="32" right="32" bottom="32" left="32"/>
+                </padding>
+                <Label text="PROJECTFLOW"
+                       style="-fx-text-fill: black; -fx-font-size: 20; -fx-font-weight: bold;"/>
+                <VBox spacing="6">
+                    <Label text="Логин" style="-fx-text-fill: #333; -fx-font-size: 12;"/>
+                    <TextField fx:id="usernameField" prefWidth="276" prefHeight="34"
+                               style="-fx-background-color: white; -fx-border-color: #999; -fx-border-width: 1; -fx-font-size: 13;"/>
+                </VBox>
+                <VBox spacing="6">
+                    <Label text="Пароль" style="-fx-text-fill: #333; -fx-font-size: 12;"/>
+                    <PasswordField fx:id="passwordField" prefWidth="276" prefHeight="34"
+                                   style="-fx-background-color: white; -fx-border-color: #999; -fx-border-width: 1; -fx-font-size: 13;"/>
+                </VBox>
+                <Label fx:id="errorLabel" visible="false"
+                       style="-fx-text-fill: #c62828; -fx-font-size: 12;"/>
+                <HBox spacing="8">
+                    <Button fx:id="loginButton" text="ВОЙТИ" prefWidth="134" prefHeight="36"
+                            style="-fx-background-color: #1565c0; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12; -fx-background-radius: 0;"
+                            onAction="#handleLogin"/>
+                    <Button fx:id="registerButton" text="РЕГИСТРАЦИЯ" prefWidth="134" prefHeight="36"
+                            style="-fx-background-color: white; -fx-text-fill: #1565c0; -fx-font-weight: bold; -fx-font-size: 12; -fx-border-color: #1565c0; -fx-border-width: 1; -fx-background-radius: 0;"
+                            onAction="#handleRegister"/>
+                </HBox>
+            </VBox>
+        </VBox>
+    </center>
+</BorderPane>

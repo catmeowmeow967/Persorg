@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<VBox prefHeight="600" prefWidth="800" spacing="0"
+      style="-fx-background-color: white; -fx-border-color: black; -fx-border-width: 1;"
+      xmlns="http://javafx.com/javafx/17.0.2"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="controllers.TaskDetailController">
+    <HBox alignment="CENTER_LEFT" spacing="8"
+          style="-fx-padding: 12 24; -fx-border-color: black; -fx-border-width: 0 0 1 0;">
+        <Label fx:id="taskTitleLabel" maxWidth="400"
+               style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: black;"
+               wrapText="true"/>
+        <Region HBox.hgrow="ALWAYS"/>
+        <Button fx:id="toggleStatusButtonTop"
+                style="-fx-background-color: #1565c0; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12; -fx-background-radius: 0;"
+                text="СТАТУС"/>
+        <Button fx:id="saveButton"
+                style="-fx-background-color: #1565c0; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12; -fx-background-radius: 0;"
+                text="СОХРАНИТЬ"/>
+        <Button fx:id="closeButton"
+                style="-fx-background-color: #c62828; -fx-text-fill: white; -fx-font-weight: bold; -fx-font-size: 12; -fx-background-radius: 0;"
+                text="X"/>
+    </HBox>
+    <TabPane fx:id="detailTabs" style="-fx-background-color: white;" VBox.vgrow="ALWAYS">
+        <Tab text="ОПИСАНИЕ">
+            <ScrollPane fitToWidth="true" style="-fx-background-color: white;">
+                <VBox spacing="16" style="-fx-padding: 16 24;">
+                    <HBox spacing="16">
+                        <VBox spacing="4">
+                            <Label text="Приоритет" style="-fx-text-fill: #333; -fx-font-size: 11;"/>
+                            <Label fx:id="priorityLabel" style="-fx-font-size: 14; -fx-font-weight: bold;" text="СРЕДНИЙ"/>
+                        </VBox>
+                        <VBox spacing="4">
+                            <Label text="Статус" style="-fx-text-fill: #333; -fx-font-size: 11;"/>
+                            <Label fx:id="statusLabel" style="-fx-font-size: 14;" text="В работе"/>
+                        </VBox>
+                        <VBox spacing="4">
+                            <Label text="Срок" style="-fx-text-fill: #333; -fx-font-size: 11;"/>
+                            <HBox alignment="CENTER_LEFT" spacing="4">
+                                <Label fx:id="dueDateLabel" style="-fx-font-size: 14;" text="Без срока"/>
+                                <Button fx:id="setDueDateButtonSmall"
+                                        style="-fx-background-color: transparent; -fx-text-fill: #1565c0; -fx-font-size: 11;"
+                                        text="ИЗМ."/>
+                            </HBox>
+                        </VBox>
+                    </HBox>
+                    <Separator style="-fx-background-color: black;"/>
+                    <VBox spacing="8">
+                        <Label text="ОПИСАНИЕ"
+                               style="-fx-font-size: 14; -fx-font-weight: bold; -fx-text-fill: black;"/>
+                        <TextArea fx:id="descriptionArea" prefRowCount="6"
+                                  promptText="Добавьте описание..."
+                                  style="-fx-background-color: white; -fx-border-color: #999; -fx-border-width: 1; -fx-font-size: 13;"
+                                  wrapText="true"/>
+                    </VBox>
+                    <VBox spacing="4">
+                        <Label text="Дополнительно"
+                               style="-fx-font-size: 12; -fx-text-fill: #333; -fx-font-weight: bold;"/>
+                        <Label fx:id="createdLabel" style="-fx-font-size: 11; -fx-text-fill: #333;" text=""/>
+                    </VBox>
+                </VBox>
+            </ScrollPane>
+        </Tab>
+        <Tab text="ФАЙЛЫ">
+            <ScrollPane fitToWidth="true" style="-fx-background-color: white;">
+                <VBox fx:id="attachmentsContainer" spacing="12" style="-fx-padding: 16 24;"/>
+            </ScrollPane>
+        </Tab>
+    </TabPane>
+    <HBox alignment="CENTER_RIGHT" spacing="8"
+          style="-fx-padding: 12 24; -fx-border-color: black; -fx-border-width: 1 0 0 0;">
+        <Button fx:id="setDueDateButton"
+                style="-fx-background-color: #1565c0; -fx-text-fill: white; -fx-font-size: 12; -fx-background-radius: 0;"
+                text="СРОК"/>
+        <Button fx:id="toggleStatusButton"
+                style="-fx-background-color: #1565c0; -fx-text-fill: white; -fx-font-size: 12; -fx-background-radius: 0;"
+                text="СТАТУС"/>
+        <Button fx:id="archiveButton"
+                style="-fx-background-color: #c62828; -fx-text-fill: white; -fx-font-size: 12; -fx-background-radius: 0;"
+                text="АРХИВ"/>
+    </HBox>
+</VBox>
